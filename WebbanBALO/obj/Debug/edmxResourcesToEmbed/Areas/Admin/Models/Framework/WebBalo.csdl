@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebBaloModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="TenKH" />
+    </Key>
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Donhangs" Relationship="Self.FK_Donhang_Account" FromRole="Account" ToRole="Donhang" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="TKad" />
+    </Key>
+    <Property Name="TKad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MKad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTdonhang">
+    <Key>
+      <PropertyRef Name="Madon" />
+      <PropertyRef Name="Masp" />
+    </Key>
+    <Property Name="Madon" Type="Int32" Nullable="false" />
+    <Property Name="Masp" Type="Int32" Nullable="false" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Gia" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Donhang" Relationship="Self.FK_CTdonhang_Donhang" FromRole="CTdonhang" ToRole="Donhang" />
+    <NavigationProperty Name="Sanpham" Relationship="Self.FK_CTdonhang_Sanpham" FromRole="CTdonhang" ToRole="Sanpham" />
+  </EntityType>
+  <EntityType Name="Danhmuc">
+    <Key>
+      <PropertyRef Name="Madm" />
+    </Key>
+    <Property Name="Madm" Type="Int32" Nullable="false" />
+    <Property Name="Tendm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tenvt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Macha" Type="Int32" />
+    <Property Name="Thutusx" Type="Int32" />
+    <Property Name="Thutuht" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Trangthai" Type="Boolean" />
+    <NavigationProperty Name="Danhmuc1" Relationship="Self.FK_Danhmuc_Danhmuc" FromRole="Danhmuc" ToRole="Danhmuc1" />
+    <NavigationProperty Name="Danhmuc2" Relationship="Self.FK_Danhmuc_Danhmuc" FromRole="Danhmuc1" ToRole="Danhmuc" />
+    <NavigationProperty Name="Sanphams" Relationship="Self.FK_Sanpham_Danhmuc" FromRole="Danhmuc" ToRole="Sanpham" />
+  </EntityType>
+  <EntityType Name="Donhang">
+    <Key>
+      <PropertyRef Name="Madon" />
+    </Key>
+    <Property Name="Madon" Type="Int32" Nullable="false" />
+    <Property Name="Ngaydat" Type="DateTime" Precision="3" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_Donhang_Account" FromRole="Donhang" ToRole="Account" />
+    <NavigationProperty Name="CTdonhangs" Relationship="Self.FK_CTdonhang_Donhang" FromRole="Donhang" ToRole="CTdonhang" />
+  </EntityType>
+  <EntityType Name="Khuyenmai">
+    <Key>
+      <PropertyRef Name="Makm" />
+    </Key>
+    <Property Name="Makm" Type="Int32" Nullable="false" />
+    <Property Name="Chitietkm" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Anhkm" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="Masale" />
+    </Key>
+    <Property Name="Masale" Type="Int32" Nullable="false" />
+    <Property Name="Tenspsale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Giasale" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Anhsp" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="Masp" />
+    </Key>
+    <Property Name="Masp" Type="Int32" Nullable="false" />
+    <Property Name="Tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Madm" Type="Int32" />
+    <Property Name="Anh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Mota" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Trangthai" Type="Boolean" />
+    <NavigationProperty Name="CTdonhangs" Relationship="Self.FK_CTdonhang_Sanpham" FromRole="Sanpham" ToRole="CTdonhang" />
+    <NavigationProperty Name="Danhmuc" Relationship="Self.FK_Sanpham_Danhmuc" FromRole="Sanpham" ToRole="Danhmuc" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Donhang_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="TenKH" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="TenKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTdonhang_Donhang">
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="1" />
+    <End Role="CTdonhang" Type="Self.CTdonhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donhang">
+        <PropertyRef Name="Madon" />
+      </Principal>
+      <Dependent Role="CTdonhang">
+        <PropertyRef Name="Madon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTdonhang_Sanpham">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="1" />
+    <End Role="CTdonhang" Type="Self.CTdonhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="Masp" />
+      </Principal>
+      <Dependent Role="CTdonhang">
+        <PropertyRef Name="Masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Danhmuc_Danhmuc">
+    <End Role="Danhmuc" Type="Self.Danhmuc" Multiplicity="0..1" />
+    <End Role="Danhmuc1" Type="Self.Danhmuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuc">
+        <PropertyRef Name="Madm" />
+      </Principal>
+      <Dependent Role="Danhmuc1">
+        <PropertyRef Name="Macha" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sanpham_Danhmuc">
+    <End Role="Danhmuc" Type="Self.Danhmuc" Multiplicity="0..1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuc">
+        <PropertyRef Name="Madm" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="Madm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebBaloEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="CTdonhangs" EntityType="Self.CTdonhang" />
+    <EntitySet Name="Danhmucs" EntityType="Self.Danhmuc" />
+    <EntitySet Name="Donhangs" EntityType="Self.Donhang" />
+    <EntitySet Name="Khuyenmais" EntityType="Self.Khuyenmai" />
+    <EntitySet Name="Sales" EntityType="Self.Sale" />
+    <EntitySet Name="Sanphams" EntityType="Self.Sanpham" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Donhang_Account" Association="Self.FK_Donhang_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Donhang" EntitySet="Donhangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTdonhang_Donhang" Association="Self.FK_CTdonhang_Donhang">
+      <End Role="Donhang" EntitySet="Donhangs" />
+      <End Role="CTdonhang" EntitySet="CTdonhangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTdonhang_Sanpham" Association="Self.FK_CTdonhang_Sanpham">
+      <End Role="Sanpham" EntitySet="Sanphams" />
+      <End Role="CTdonhang" EntitySet="CTdonhangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Danhmuc_Danhmuc" Association="Self.FK_Danhmuc_Danhmuc">
+      <End Role="Danhmuc" EntitySet="Danhmucs" />
+      <End Role="Danhmuc1" EntitySet="Danhmucs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sanpham_Danhmuc" Association="Self.FK_Sanpham_Danhmuc">
+      <End Role="Danhmuc" EntitySet="Danhmucs" />
+      <End Role="Sanpham" EntitySet="Sanphams" />
+    </AssociationSet>
+    <EntitySet Name="Themanhs" EntityType="WebBaloModel.Themanh" />
+  </EntityContainer>
+  <EntityType Name="Themanh">
+    <Key>
+      <PropertyRef Name="Maanh" />
+    </Key>
+    <Property Name="Maanh" Type="Int32" Nullable="false" />
+    <Property Name="Upanh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

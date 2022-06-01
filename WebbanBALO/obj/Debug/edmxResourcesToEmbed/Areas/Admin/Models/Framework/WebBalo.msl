@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebBaloModelStoreContainer" CdmEntityContainer="WebBaloEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="WebBaloModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="MK" ColumnName="MK" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="WebBaloModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="TKad" ColumnName="TKad" />
+          <ScalarProperty Name="MKad" ColumnName="MKad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTdonhangs">
+      <EntityTypeMapping TypeName="WebBaloModel.CTdonhang">
+        <MappingFragment StoreEntitySet="CTdonhang">
+          <ScalarProperty Name="Madon" ColumnName="Madon" />
+          <ScalarProperty Name="Masp" ColumnName="Masp" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Danhmucs">
+      <EntityTypeMapping TypeName="WebBaloModel.Danhmuc">
+        <MappingFragment StoreEntitySet="Danhmuc">
+          <ScalarProperty Name="Madm" ColumnName="Madm" />
+          <ScalarProperty Name="Tendm" ColumnName="Tendm" />
+          <ScalarProperty Name="Tenvt" ColumnName="Tenvt" />
+          <ScalarProperty Name="Macha" ColumnName="Macha" />
+          <ScalarProperty Name="Thutusx" ColumnName="Thutusx" />
+          <ScalarProperty Name="Thutuht" ColumnName="Thutuht" />
+          <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donhangs">
+      <EntityTypeMapping TypeName="WebBaloModel.Donhang">
+        <MappingFragment StoreEntitySet="Donhang">
+          <ScalarProperty Name="Madon" ColumnName="Madon" />
+          <ScalarProperty Name="Ngaydat" ColumnName="Ngaydat" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khuyenmais">
+      <EntityTypeMapping TypeName="WebBaloModel.Khuyenmai">
+        <MappingFragment StoreEntitySet="Khuyenmai">
+          <ScalarProperty Name="Makm" ColumnName="Makm" />
+          <ScalarProperty Name="Chitietkm" ColumnName="Chitietkm" />
+          <ScalarProperty Name="Anhkm" ColumnName="Anhkm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="WebBaloModel.Sale">
+        <MappingFragment StoreEntitySet="Sale">
+          <ScalarProperty Name="Masale" ColumnName="Masale" />
+          <ScalarProperty Name="Tenspsale" ColumnName="Tenspsale" />
+          <ScalarProperty Name="Giasale" ColumnName="Giasale" />
+          <ScalarProperty Name="Anhsp" ColumnName="Anhsp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sanphams">
+      <EntityTypeMapping TypeName="WebBaloModel.Sanpham">
+        <MappingFragment StoreEntitySet="Sanpham">
+          <ScalarProperty Name="Masp" ColumnName="Masp" />
+          <ScalarProperty Name="Tensp" ColumnName="Tensp" />
+          <ScalarProperty Name="Madm" ColumnName="Madm" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WebBaloModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Themanhs">
+      <EntityTypeMapping TypeName="WebBaloModel.Themanh">
+        <MappingFragment StoreEntitySet="Themanh">
+          <ScalarProperty Name="Upanh" ColumnName="Upanh" />
+          <ScalarProperty Name="Maanh" ColumnName="Maanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

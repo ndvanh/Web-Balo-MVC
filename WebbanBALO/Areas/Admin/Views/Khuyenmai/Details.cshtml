@@ -1,0 +1,35 @@
+﻿@model WebbanBALO.Areas.Admin.Models.Framework.Khuyenmai
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Khuyenmai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Chitietkm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chitietkm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anhkm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anhkm)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Makm }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

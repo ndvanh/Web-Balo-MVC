@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebbanBALO.Areas.Admin.Models.Framework.Danhmuc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Danh Mục</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tendm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenvt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thutusx)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thutuht)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trangthai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Danhmuc2.Tendm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tendm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenvt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thutusx)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thutuht)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trangthai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Danhmuc2.Tendm)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Madm }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Madm }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Madm })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,35 @@
+﻿
+@model List<WebbanBALO.Areas.Admin.Models.Framework.Sale>
+
+<div class="content-middle">
+    <h2 class="middle">HOT SALES</h2>
+    <div class="col-best">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <a href="#">
+                        <div class="col-in" style="height:450px;">
+                            <div class="col-in-left">
+                                <img src="~/Areas/Admin/FilesUpload/@item.Anhsp" class="img-responsive" alt="" >
+                            </div>
+                            <div class="col-in-right grid_1 simpleCart_shelfItem">
+                                <h5>@item.Tenspsale</h5>
+                                <h5 style="margin-top:10px;">Giá: @item.Giasale</h5>
+                                <!---->
+                                <a href="#" class="item_add"><span class="white item_price">Mua <i> </i> </span></a>
+                                <!---->
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="clearfix"> </div>
+                </div>
+
+            }
+            
+        </div>
+    </div>
+
+    <div class="clearfix"> </div>
+</div>

@@ -1,0 +1,23 @@
+﻿@model List<WebbanBALO.Areas.Admin.Models.Framework.Khuyenmai>
+@{
+    ViewBag.Title = "Khuyenmaitt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>
+    Thông tin khuyến mãi - VCA
+</title>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="row" style="margin-top:30px;margin-bottom:30px;">
+                    <p style="text-align: center;font-size: 30px; color: #e84118;"><strong>@item.Chitietkm</strong>  <br /></p>
+                    <img src="~/Areas/Admin/FilesUpload/@item.Anhkm" class="img-responsive" alt="" style="margin-top:20px;">
+            </div>
+           
+        }
+
+    </div>
+    <div class="clearfix"> </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model List<WebbanBALO.Areas.Admin.Models.Framework.Sanpham>
+@{
+    ViewBag.Title = "BaloHocSinh";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>Balo Học Sinh - VCA</title>
+<div class="container">
+    <div class="content-top-blue">
+        <h2 class="hocsinh">BALO HỌC SINH</h2>
+        <div class="pink">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 blue" style="margin-top:20px;">
+                        <a href="@Url.Action("Chitietsp","Balo", new {@Masp=item.Masp })"> <img src="~/Areas/Admin/FilesUpload/@item.Anh" class="img-responsive" alt=""></a>
+                        <!---->
+                        <div class="grid_1 simpleCart_shelfItem">
+                            <a href="#" class="cup item_add"><span class=" item_price">@item.Tensp  <br /><span class=" item_price">@item.Gia <i> </i> </span> </span></a>
+                        </div>
+                        <!---->
+                    </div>
+                }
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+
+    </div>
+    <!---->
+
+</div>

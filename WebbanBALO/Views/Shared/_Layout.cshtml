@@ -1,0 +1,191 @@
+﻿
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link rel="shortcut icon" type="image/jpg" href="~/Content/images/a1ea0ec4d84a48e7b68bbed6b75ee287 (1).png" />
+    <link href="~/Content/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/css/etalage.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Markito Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    
+    <!--//fonts-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="~/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/js/easing.js"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 4,
+                lazyLoad: true,
+                autoPlay: true,
+                pagination: true,
+            });
+        });
+    </script>
+    <!-- start menu -->
+    <link href="~/Content/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Content/js/megamenu.js"></script>
+    <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+    <script src="~/Content/js/jquery.wmuSlider.js"></script>
+    <script src="~/Content/js/owl.carousel.js"></script>
+    <script src="~/Content/js/simpleCart.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="top-head">
+                    <div class="logo">
+                        <a href='@Url.Action("Index", "Home")'>
+                            <img src='@Url.Content("~/Content/images/a1ea0ec4d84a48e7b68bbed6b75ee287 (1).png")' />
+                        </a>
+                    </div>
+                    <ul class="header-in">
+                        <li>@Html.ActionLink("GIỚI THIỆU", "About", "Home")</li>
+                        <li>@Html.ActionLink("KHUYẾN MÃI", "Khuyenmaitt", "TTKhuyenmai")</li>
+                        <li>@Html.ActionLink("ĐĂNG KÝ", "Create", "DKY")</li>
+                    </ul>
+                    <div class="search-top">
+                        <div class="search">
+                            <form>
+                                <input type="text" value="Bạn cần tìm balo đẹp?" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Bạn cần tìm balo đẹp?';}">
+                                <button type="submit" class="fas fa-search" style="        background-color: #feca57; color:white;"></button>
+                            </form>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+
+        <div class="header-top">
+            <div class="container">
+                <div class="head-top">
+                    <div class="top-nav">
+                        <ul class="megamenu skyblue">
+                            <li class="active grid">
+                                <a href='@Url.Action("BaloLaptop", "Balo")'>Balo Laptop</a>
+                            </li>
+                            <li>
+                                <a href="#">Balo Du Lịch</a>
+                                <div class="megapanel">
+                                    <div class="h_nav">
+                                        <ul>
+                                            <li><a href='@Url.Action("BaloDuLichNam", "Balo")'>Balo Du Lịch Nam</a></li>
+                                            <li><a href='@Url.Action("BaloDuLichNu", "Balo")'>Balo Du Lịch Nữ</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="grid">
+                                <a href='@Url.Action("BaloCaoCap", "Balo")'>Balo Cao Cấp</a>
+                            </li>
+                            <li class="grid">
+                                <a href='@Url.Action("BaloHocSinh", "Balo")'>Balo Học Sinh</a>
+
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                    <div class="cart box_1">
+                        <a href="@Url.Action("GioHang","GioHang")">
+                            (@ViewBag.TongSoLuong)
+                            @* <div class="total">
+             (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)
+        </div>*@
+                            <img src="~/Content/images/cart.png" alt="" />
+
+                        </a>
+                      
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--banner-->
+    <div>@RenderBody()</div>
+
+
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 footer-left">
+                <a href='@Url.Action("Index", "Home")'>
+                    <img src='@Url.Content("~/Content/images/a1ea0ec4d84a48e7b68bbed6b75ee287 (1).png")' />
+                </a>
+                <p class="footer-class">© SHOP BALO VCA 2021 </p>
+            </div>
+            <div class="col-md-2 footer-middle">
+                <ul>
+                    <li>@Html.ActionLink("GIỚI THIỆU", "About", "Home")</li>
+                    <li>@Html.ActionLink("KHUYẾN MÃI", "Khuyenmaitt", "TTKhuyenmai")</li>
+                    <li>@Html.ActionLink("ĐĂNG KÝ", "Create", "DKY")</li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-left-in">
+                <ul class="term">
+                    <li><a href="#">Địa chỉ: 235 Hoàng Quốc Việt, Bắc Từ Liêm, Hà Nội</a> </li>
+                    <li><a href="#">  SĐT: 0123456789 - 02389576424</a></li>
+                    <li><a href="#">  Email: vca@email.com</a></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-3 footer-right">
+                <h5>THANH TOÁN</h5>
+                <ul>
+                    <li><a href="#"><i> </i></a> </li>
+                    <li><a href="#"><i class="we"> </i></a></li>
+                    <li><a href="#"><i class="we-in"> </i></a></li>
+                    <li><a href="#"><i class="we-at"> </i></a></li>
+                    <li><a href="#"><i class="we-at-at"> </i></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                        containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                    };
+                */
+
+                $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+        </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>

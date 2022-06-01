@@ -1,0 +1,91 @@
+﻿@using WebbanBALO.Models;
+@model List<Giohang>
+
+@{
+    ViewBag.Title = "SuaGioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .divGioHang {
+        border: 2px solid #EEEEEE;
+        margin-left: 10%;
+        font-size: large
+    }
+
+        .divGioHang td {
+            padding: 10px;
+            border: 2px solid #EEEEEE;
+            text-align: center
+        }
+
+        .divGioHang th {
+            text-align: center
+        }
+    .ipup {
+        text-align: center;
+        height: 40px;
+        width: 100px;
+        background-color: #74b9ff;
+        
+    }
+    .btnx {
+        text-align: center;
+        height: 40px;
+        width: 100px;
+        background-color: #74b9ff;
+        margin-top: 10px;
+    }
+</style>
+<title>Sửa Số Lượng - VCA</title>
+<div class="container">
+    <h2>Sửa Số Lượng</h2>
+
+    <table class="table-bordered font-italic divGioHang">
+        <tr>
+            <th> Mã SP</th>
+
+            <th> Tên SP</th>
+
+            <th> Ảnh bìa</th>
+
+            <th> Đơn giá</th>
+
+            <th> Số lượng</th>
+
+            <th> Thành tiền</th>
+        </tr>
+
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.aMasp</td>
+
+                <td> @item.aTensp</td>
+
+                <td> <img src="@Url.Content("~/Areas/Admin/FilesUpload/" +item.aAnhBia)" width="50" height="50" /></td>
+
+                <td>  @String.Format("{0:0,0}", item.aDonGia) VNĐ</td>
+
+                @*Chỉnh sửa giỏ hàng gọi về action CapNhatGioHang*@
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @aMaSP = item.aMasp }))
+                {
+                    <td>@Html.TextBox("txtSoLuong", item.aSoLuong) </td>
+
+                    <td>@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+                    <td>
+                        <input type="submit" value="Cập nhật" class="ipup" />
+                        <br />
+
+                        <button class="btnx" >@Html.ActionLink("Xóa", "XoaGioHang", new { @aMaSP = item.aMasp })</button>
+                    </td>
+                }
+
+            </tr>
+        }
+    </table>
+
+
+
+</div>
